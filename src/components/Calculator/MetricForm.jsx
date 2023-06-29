@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import InputText from '../UI/InputText';
 import CalculatorTotal from './CalculatorTotal';
 
-const MetricForm = (props) => {
+const MetricForm = ({ bmiResults }) => {
   const [enteredHeight, setEnteredHeight] = useState();
   const [enteredWeight, setEnteredWeight] = useState();
 
@@ -20,7 +20,7 @@ const MetricForm = (props) => {
     const metricBMIValue = (enteredWeight / cmValue ** 2).toFixed(1);
     const metricResults = [metricBMIValue, 'kgs'];
 
-    key == 'Enter' && props.bmiResults(metricResults); 
+    key == 'Enter' && bmiResults(metricResults);
   };
 
   return (

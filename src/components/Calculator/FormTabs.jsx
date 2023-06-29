@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import InputRadio from '../UI/InputRadio';
 
-const FormTabs = (props) => {
+const FormTabs = ({ activeForm, bmiResults }) => {
   const [selected, setSelected] = useState('metric');
 
   const selectValueHandler = (event) => {
-    props.activeForm(event.target.value);
+    activeForm(event.target.value);
     setSelected(event.target.value);
+    bmiResults('');
   };
 
   return (

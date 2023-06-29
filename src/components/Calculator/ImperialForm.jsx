@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import InputText from '../UI/InputText';
 
-const ImperialForm = (props) => {
+const ImperialForm = ({ bmiResults }) => {
   const [enteredFt, setEnteredFt] = useState();
   const [enteredIn, setEnteredIn] = useState();
   const [enteredSt, setEnteredSt] = useState();
@@ -36,7 +36,7 @@ const ImperialForm = (props) => {
     const imperialResults = [imperialBMIValue, 'lbs', 'st'];
     const key = event.key;
 
-    key == 'Enter' && props.bmiResults(imperialResults);
+    key == 'Enter' && bmiResults(imperialResults);
   };
 
   return (
